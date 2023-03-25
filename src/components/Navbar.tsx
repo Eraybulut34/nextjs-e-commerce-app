@@ -5,6 +5,7 @@ import { Button, Card, Col, Row, Space } from "antd";
 import LoginModal from "./modals/LoginModal";
 import SignUpModal from "./modals/SignUpModal";
 import { TodoService } from "@/services/TodoService";
+import CategoriesBar from "./bars/CategoriesBar";
 interface NavbarContextType {
   login: boolean;
   signup: boolean;
@@ -48,33 +49,36 @@ function Navbar() {
   }, []);
 
   return (
-    <Card style={cardStyle}>
-      <Row>
-        <Col span={20}>
-          {links.map((link: any, index: any) => (
-            <Link
-              href={link.link}
-              key={index}
-              style={{ color: "black", fontWeight: "bold", fontSize: 16 }}
-            >
-              {link.name}
-            </Link>
-          ))}
-        </Col>
-        <Col style={{ textAlign: "center",marginInline: "8px" }}>
-          <Button onClick={loginOpen} type="primary" ghost>
-            Giriş Yap
-          </Button>
-          <LoginModal />
-        </Col>
-        <Col span={2}>
-          <Button onClick={signupOpen} type="primary" danger>
-            Kaydol
-          </Button>
-          <SignUpModal />
-        </Col>
-      </Row>
-    </Card>
+    <>
+      <Card style={cardStyle}>
+        <Row>
+          <Col span={20}>
+            {links.map((link: any, index: any) => (
+              <Link
+                href={link.link}
+                key={index}
+                style={{ color: "black", fontWeight: "bold", fontSize: 16 }}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </Col>
+          <Col style={{ textAlign: "center", marginInline: "8px" }}>
+            <Button onClick={loginOpen} type="primary" ghost>
+              Giriş Yap
+            </Button>
+            <LoginModal />
+          </Col>
+          <Col span={2}>
+            <Button onClick={signupOpen} type="primary" danger>
+              Kaydol
+            </Button>
+            <SignUpModal />
+          </Col>
+        </Row>
+      </Card>
+      <CategoriesBar />
+    </>
   );
 }
 
