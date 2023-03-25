@@ -48,35 +48,33 @@ const leftMenuStyle: React.CSSProperties = {
 //contents title,description,image
 const contents = [
   {
+    id: 1,
     title: "Yatak",
     price: "10",
     description: "Lorem ipsum , nunc nisl aliquet ",
     image: "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
   },
   {
+    id: 2,
     title: "Koltuk",
     price: "10",
     description: "Lorem ipsum , nunc nisl aliquet",
     image: "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
   },
   {
+    id: 3,
     title: "Telefon",
     price: "10",
     description: "Lorem ipsum , nunc nisl aliquet",
     image: "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
   },
   {
+    id: 4,
     title: "Bilgisayar",
     price: "10",
     description: "Lorem ipsum , nunc nisl aliquet",
     image: "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
   },
-  {
-    title: "Bilgisayar",
-    price: "10",
-    description: "Lorem ipsum , nunc nisl aliquet",
-    image: "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-  }
 ]
 
 function HomePage() {
@@ -86,7 +84,9 @@ function HomePage() {
         <Row>
           {contents.map((content: any) => (
             <Col span={4} style={{ margin: "1rem" }} key={content.title}>
-              <CartCard title={content.title} description={content.description} image={content.image} price={content.price} />
+              <CartCard
+              
+              title={content.title} description={content.description} image={content.image} price={content.price} id={content.id} />
             </Col>
           ))}
         </Row>

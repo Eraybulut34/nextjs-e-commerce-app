@@ -1,20 +1,26 @@
 import { Card } from "antd";
 import React from "react";
 import { EditOutlined, ShoppingCartOutlined, StarFilled } from '@ant-design/icons';
+import Router from "next/router";
 
 
 function ContentCard(props: any) {
-  const { title, description, price, image } = props;
+  const { title, description, price, image, id } = props;
 
+  const cardDClicked = (e: any) => {
+    //router push to content page
+    Router.push(`/products/${id}`);
+  };
   return (
     <Card
       bordered={false}
       style={styles.cardStyle}
-      cover={<img alt="example" src={image} />}
+      cover={<img onClick={cardDClicked} alt="example" src={image} />}
       actions={[
         <StarFilled key="setting" />,
         <ShoppingCartOutlined key="ellipsis" />,
       ]}
+
     >
       <p style={styles.cartTitleStyle}>{title}</p>
       <p style={styles.cartDescriptionStyle}>{description}</p>
@@ -40,8 +46,8 @@ const styles = {
     fontSize: 12,
   },
   cartPriceStyle: {
-    fontSize: 12,
-    color: "red",
+    fontSize: 15,
+    color: "#1890ff",
     fontWeight: "bold",
   },
 };
