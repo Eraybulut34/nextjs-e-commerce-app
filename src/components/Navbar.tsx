@@ -1,41 +1,80 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect } from "react";
+import AuthContext from "@/context/auth/authContext";
 import Link from "next/link";
-
+import { Button, Card, Col, Row, Space } from "antd";
+import LoginModal from "./modals/LoginModal";
+import SignUpModal from "./modals/SignUpModal";
+import { TodoService } from "@/services/TodoService";
+interface NavbarContextType {
+  login: boolean;
+  signup: boolean;
+  dispatch: Function;
+}
+const todoService = new TodoService();
 function Navbar() {
-  const [logindialog, setLoginDialog] = useState(false);
-  const [signup, setSignup] = useState(false);
+  const { dispatch }: NavbarContextType = useContext(AuthContext);
 
-  const handleSignup = () => {
-    setSignup(true);
-  };
-  const closeSignup = () => {
-    setSignup(false);
+  const loginOpen = () => {
+    dispatch({
+      type: "LOGIN_OPEN",
+    });
   };
 
-  const handleOpen = () => {
-    setLoginDialog(true);
-  };
-
-  const handleClose = () => {
-    setLoginDialog(false);
+  const signupOpen = () => {
+    dispatch({
+      type: "SIGNUP_OPEN",
+    });
   };
 
   const links = [
     {
-      name: "React",
-      link: "/react-notlari",
-      textcolor: "text-info",
-    },
-    {
-      name: "TypeScript",
-      link: "/ts-notlari",
-      textcolor: "text-blue-500",
+      name: "Software Forum",
+      link: "/",
     },
   ];
+
+  const cardStyle: React.CSSProperties = {
+    backgroundColor: "#f0f2f5",
+    boxSizing: "border-box",
+  };
+
+  const getTodoDetail = async () => {
+    const response = await todoService.GetTodoDetail(1);
+    console.log(response);
+  };
+
+  useEffect(() => {
+    getTodoDetail();
+  }, []);
+
   return (
-    <div>
-      ajshdajskd
-    </div>
+    <Card style={cardStyle}>
+      <Row>
+        <Col span={20}>
+          {links.map((link: any, index: any) => (
+            <Link
+              href={link.link}
+              key={index}
+              style={{ color: "black", fontWeight: "bold", fontSize: 16 }}
+            >
+              {link.name}
+            </Link>
+          ))}
+        </Col>
+        <Col span={2} style={{ textAlign: "center" }}>
+          <Button onClick={loginOpen} type="primary" ghost>
+            Login
+          </Button>
+          <LoginModal />
+        </Col>
+        <Col span={2}>
+          <Button onClick={signupOpen} type="primary" danger>
+            Signup
+          </Button>
+          <SignUpModal />
+        </Col>
+      </Row>
+    </Card>
   );
 }
 
