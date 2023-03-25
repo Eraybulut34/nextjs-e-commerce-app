@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Content } from "antd/es/layout/layout";
 
 
-function ContentCard(props: any) {
+function ProductDetail(props: any) {
   const router = useRouter();
   const { id } = router.query;
 
@@ -41,4 +41,4 @@ const styles = {
   },
 };
 
-export default ContentCard;
+export default ProductDetail;
