@@ -7,7 +7,7 @@ interface authContextType {
 }
 
 const AuthContext: any = createContext<authContextType | null>(null);
-
+a
 export const AuthProvider = ({ children }: any) => {
   const initialState: authContextType = {
     login: false,
