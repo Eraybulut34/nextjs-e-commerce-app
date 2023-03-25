@@ -28,7 +28,7 @@ function Navbar() {
 
   const links = [
     {
-      name: "Software Forum",
+      name: "E Commerce App",
       link: "/",
     },
   ];

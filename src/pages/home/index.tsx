@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Row, List } from "antd";
-import ContentCard from "../../components/content/ContentCard";
+import CartCard from "../../components/cart/CartCard";
 const entryTitles = [
   {
     title: "bugün bunlar oldu",
@@ -48,37 +48,48 @@ const leftMenuStyle: React.CSSProperties = {
 //contents title,description,image
 const contents = [
   {
-    title: "bugün bunlar oldu",
-    description: "bugün bunlar oldu",
-    image: "https://picsum.photos/200/300"
+    title: "Yatak",
+    price: "10",
+    description: "Lorem ipsum , nunc nisl aliquet ",
+    image: "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
   },
   {
-    title: "bugün bunlar oldu",
-    description: "bugün bunlar oldu",
-    image: "https://picsum.photos/200/300"
+    title: "Koltuk",
+    price: "10",
+    description: "Lorem ipsum , nunc nisl aliquet",
+    image: "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+  },
+  {
+    title: "Telefon",
+    price: "10",
+    description: "Lorem ipsum , nunc nisl aliquet",
+    image: "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+  },
+  {
+    title: "Bilgisayar",
+    price: "10",
+    description: "Lorem ipsum , nunc nisl aliquet",
+    image: "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+  },
+  {
+    title: "Bilgisayar",
+    price: "10",
+    description: "Lorem ipsum , nunc nisl aliquet",
+    image: "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
   }
-
 ]
 
 function HomePage() {
   return (
     <div>
       <Row style={contentStyle}>
-        {/* left menu with antd*/}
-        <Col span={7} style={leftMenuStyle}>
-          <List dataSource={entryTitles} renderItem={(item) => <List.Item>{item.title}</List.Item>} />
-        </Col>
-        <Col span={16}>
-
-          {/* content cards */}
-          <Row>
-            {contents.map((content:any) => (
-              <Col span={24} style={{margin: "1rem"}} key={content.title}>
-                <ContentCard title={content.title} description={content.description} image={content.image} />
-              </Col>
-            ))}
-          </Row>
-        </Col>
+        <Row>
+          {contents.map((content: any) => (
+            <Col span={4} style={{ margin: "1rem" }} key={content.title}>
+              <CartCard title={content.title} description={content.description} image={content.image} price={content.price} />
+            </Col>
+          ))}
+        </Row>
       </Row>
 
     </div>
