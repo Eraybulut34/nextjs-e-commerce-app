@@ -3,28 +3,44 @@ import { Carousel } from 'antd';
 import Image from 'next/image';
 import { fakeProducts } from '../../../fakeProducts';
 
-const contentStyle: React.CSSProperties = {
-    display: "flex",
-    justifyContent: "center",
-    height: "100vh",
-};
+
 
 const MainHeader: React.FC = () => {
 
     const myLoader = ({ src }: any) => {
-        return "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZHVjdHxlbnwwfHwwfHw%3D&w=1000&q=80";
+        return "https://i.pinimg.com/originals/ec/b9/2d/ecb92d18c7855c986a5571c1b6f7cad2.jpg";
     };
 
     return (
         <>
-            <Carousel dotPosition="bottom">
+            <Carousel dotPosition="bottom" autoplay style={styles.carouselStyle}>
                 {fakeProducts.map((content: any) => (
-                    <div key={content.id} style={contentStyle}>
-                        <Image loader={myLoader} src={content.image} alt={content.title} width={1000} height={400} /></div>
+                    <div key={content.id} style={styles.contentStyle}>
+                        <Image loader={myLoader} src={content.image} alt={content.title} width="5000" height={500} /></div>
                 ))}
             </Carousel>
         </>
     );
 };
+
+const styles = {
+    carouselStyle: {
+        boxSizing: "border-box",
+        borderRadius: "80px",
+        display: "flex",
+        justifyContent: "center",
+        border: "1px solid #f0f2f5",
+        alignContent: "center",
+        alignItems: "center",
+    },
+    contentStyle: {
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        alignContent: "center",
+        boxSizing: "border-box",
+        borderRadius: "80px",
+    }
+}
 
 export default MainHeader;

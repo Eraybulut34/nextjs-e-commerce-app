@@ -27,4 +27,11 @@ export const fakeProducts = [
         description: "Lorem ipsum , nunc nisl aliquet",
         image: "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
     },
+    {
+        id: 5,
+        title: "Kıyafet",
+        price: "10",
+        description: "Lorem ipsum , nunc nisl aliquet",
+        image: "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+    },
 ]

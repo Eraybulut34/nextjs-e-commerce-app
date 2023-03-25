@@ -12,7 +12,7 @@ function HomePage() {
   return (
     <div>
       <Row style={contentStyle}>
-        <Col span={16} style={{ margin: "1rem"}}>
+        <Col span={22} style={{ margin: "1rem"}}>
           <MainHeader />
         </Col>
       </Row>

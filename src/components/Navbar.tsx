@@ -61,15 +61,15 @@ function Navbar() {
             </Link>
           ))}
         </Col>
-        <Col span={2} style={{ textAlign: "center" }}>
+        <Col style={{ textAlign: "center",marginInline: "8px" }}>
           <Button onClick={loginOpen} type="primary" ghost>
-            Login
+            Giriş Yap
           </Button>
           <LoginModal />
         </Col>
         <Col span={2}>
           <Button onClick={signupOpen} type="primary" danger>
-            Signup
+            Kaydol
           </Button>
           <SignUpModal />
         </Col>
