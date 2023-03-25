@@ -33,6 +33,7 @@ function ProductDetail(props: any) {
 
 const styles = {
   container: {
+    padding: "1rem",
     height: "75vh",
     width: "100%",
     display: "flex",
