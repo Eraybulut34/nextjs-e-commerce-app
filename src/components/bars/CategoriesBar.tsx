@@ -8,6 +8,7 @@ const styles = {
         borderRadius: "0px",
         display: "flex",
         justifyContent: "space-around",
+        alignItems: "center",
         padding: "0px",
         height: "4rem",
         boxShadow: "0 1px 2px 0 rgba(0,0,0,0.2), 0 3px 5px 0 rgba(0,0,0,0.19)"

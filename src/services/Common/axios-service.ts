@@ -30,11 +30,7 @@ axiosConf.interceptors.response.use(
 		return config;
 	},
 	function (error) {
-		const status = error.response.status;
-		if (status != 200) {
-			// 401 ise logine yolla
 			return Promise.reject(error);
-		}
 	}
 );
 

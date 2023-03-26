@@ -9,7 +9,7 @@ function ContentCard(props: any) {
 
   const cardDClicked = (e: any) => {
     //router push to content page
-    Router.push(`/products/${id}`);
+    Router.push(`/shop/${id}`);
   };
   return (
     <Card
@@ -18,7 +18,7 @@ function ContentCard(props: any) {
       cover={<img onClick={cardDClicked} alt="example" src={image} />}
       actions={[
         <StarFilled key="setting" />,
-        <ShoppingCartOutlined key="ellipsis" />,
+        <ShoppingCartOutlined key="ellipsis" />
       ]}
 
     >

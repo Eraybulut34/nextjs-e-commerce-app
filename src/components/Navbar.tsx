@@ -37,6 +37,8 @@ function Navbar() {
   const cardStyle: React.CSSProperties = {
     backgroundColor: "#f0f2f5",
     boxSizing: "border-box",
+    padding: "0px",
+    height: "4rem",
   };
 
   const getTodoDetail = async () => {
