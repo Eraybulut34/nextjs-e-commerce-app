@@ -1,38 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## E-Commerce Website
+This is a fully functional e-commerce website built with Next.js, Redux, Context API, Ant Design, and TypeScript. The application is built with a clean architecture and utilizes Axios for data access.
 
 ## Getting Started
+To get started with the project, follow these steps:
 
-First, run the development server:
+Clone the repository
+Install dependencies using npm install
+Run the development server using npm run dev
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
+The website includes the following features:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Shopping cart functionality
+User authentication and authorization
+User profile management
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Technologies Used
+The project is built with the following technologies:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Next.js
+Redux
+Context API
+Ant Design
+TypeScript
+Axios
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## Contributing
+Contributions to the project are always welcome! To contribute, please follow these steps:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Fork the repository
+Create a new branch for your feature or bug fix
+Make your changes and commit them
+Push your changes to your fork
+Open a pull request
+License
+This project is licensed under the MIT license.
