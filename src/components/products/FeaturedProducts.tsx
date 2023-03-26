@@ -6,7 +6,6 @@ import { fakeProducts } from "../../../fakeProducts";
 const contentStyle: React.CSSProperties = {
   display: "flex",
   justifyContent: "center",
-  height: "100vh",
 };
 
 function FeaturedProducts() {

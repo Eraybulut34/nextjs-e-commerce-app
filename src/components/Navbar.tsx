@@ -52,7 +52,7 @@ function Navbar() {
     <>
       <Card style={cardStyle}>
         <Row>
-          <Col span={20}>
+          <Col span={21}>
             {links.map((link: any, index: any) => (
               <Link
                 href={link.link}
@@ -69,7 +69,7 @@ function Navbar() {
             </Button>
             <LoginModal />
           </Col>
-          <Col span={2}>
+          <Col>
             <Button onClick={signupOpen} type="primary" danger>
               Kaydol
             </Button>
