@@ -25,7 +25,6 @@ const MainHeader: React.FC = () => {
 
 const styles = {
     carouselStyle: {
-        boxSizing: "border-box",
         borderRadius: "80px",
         display: "flex",
         justifyContent: "center",
@@ -38,7 +37,6 @@ const styles = {
         justifyContent: "center",
         alignItems: "center",
         alignContent: "center",
-        boxSizing: "border-box",
         borderRadius: "80px",
     }
 }
