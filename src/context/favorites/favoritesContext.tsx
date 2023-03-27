@@ -6,7 +6,7 @@ interface favoritesContextType {
 }
 
 const FavoritesContext: any = createContext<favoritesContextType | null>(null);
-a
+
 export const AuthProvider = ({ children }: any) => {
     const initialState: favoritesContextType = {
         favorites: [],
