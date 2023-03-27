@@ -8,8 +8,8 @@ export function addFavorite(product:any) {
   return { type: ADD_FAVORITE, product }
 }
 
-export function removeFavorite(id:any) {
-  return { type: REMOVE_FAVORITE, id }
+export function removeFavorite(product:any) {
+  return { type: REMOVE_FAVORITE, product }
 }
 
 function favorites(state = [], action:any) {
@@ -17,7 +17,8 @@ function favorites(state = [], action:any) {
     case ADD_FAVORITE:
       return [...state, action];
     case REMOVE_FAVORITE:
-      return state.filter((favorite) => favorite !== action.id);
+      console.log(action,state);
+      return state.filter((favorite:any) => favorite.product.id != action.product.id);
     default:
       return state;
   }

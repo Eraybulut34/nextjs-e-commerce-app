@@ -1,11 +1,16 @@
 import React from "react";
-import { Col, Row, Card, List } from "antd";
+import { Col, Row, Card, List, Button } from "antd";
 import { fakeProducts } from "../../../fakeProducts";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Image from "next/image";
-
+import { DeleteOutlined } from "@ant-design/icons";
+import { removeFavorite } from "@/store";
 
 function FavoritesPage() {
+  const dispatch = useDispatch();
+  const removeFavoriteHandler = (product: any) => {
+    dispatch(removeFavorite(product));
+  };
   let favorites = useSelector((state: any) => state.favorites);
   favorites = favorites.map((favorite: any) => {
     return favorite.product
@@ -31,7 +36,7 @@ function FavoritesPage() {
                       height={100}
                     />
                   </Col>
-                  <Col span={20}>
+                  <Col span={17}>
                     <Row>
                       <Col span={24}>
                         <h3>{content.title}</h3>
@@ -41,6 +46,18 @@ function FavoritesPage() {
                       </Col>
                       <Col span={24}>
                         <p>{content.price}</p>
+                      </Col>
+                    </Row>
+                  </Col>
+                  <Col span={3}>
+                    <Row align={"middle"} className="pa-4">
+                      <Col span={24}>
+                        <Button type="primary" style={{width:"100%"}}>Sepete Ekle</Button>
+                      </Col>
+                      <Col span={24} className="py-2">
+                        <Button type="primary" danger style={{ width: "100%" }} onClick={() => removeFavoriteHandler(content)}>
+                          <DeleteOutlined />
+                        </Button>
                       </Col>
                     </Row>
                   </Col>
