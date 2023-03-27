@@ -13,7 +13,7 @@ function ProductDetail(props: any) {
     <>
       <div style={styles.container}>
         <Row style={{ width: "85%" }}>
-          <Col span={12} style={styles.colStyle}>
+          <Col xs={24} md={18} xl={12} style={styles.colStyle}>
             <Image loader={myLoader} src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" width={1200} height={300} alt="asdadsa" />
           </Col>
           <Col span={12}>
