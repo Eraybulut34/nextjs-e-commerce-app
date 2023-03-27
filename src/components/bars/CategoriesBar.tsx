@@ -11,6 +11,7 @@ const styles = {
         alignItems: "center",
         padding: "0px",
         height: "4rem",
+        overflow: "auto",
         boxShadow: "0 1px 2px 0 rgba(0,0,0,0.2), 0 3px 5px 0 rgba(0,0,0,0.19)"
     } as React.CSSProperties,
 };
@@ -20,7 +21,11 @@ function FeaturedProducts() {
         <Card style={styles.cardStyle}>
             <Row>
                 {fakeCategories.map((content: any) => (
-                    <Col span={2} style={{ marginInline: "1rem" }} key={content.title}>
+                    <Col xl={2}
+                        lg={4}
+                        xs={22}
+                    
+                    style={{ marginInline: "1rem" }} key={content.title}>
                         {content.title}
                     </Col>
                 ))}

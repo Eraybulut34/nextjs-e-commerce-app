@@ -54,7 +54,7 @@ function Navbar() {
     <>
       <Card style={cardStyle}>
         <Row>
-          <Col span={21}>
+          <Col xl={20} lg={18} md={15} sm={16} xs={11}>
             {links.map((link: any, index: any) => (
               <Link
                 href={link.link}

@@ -13,7 +13,7 @@ function FeaturedProducts() {
     <div>
       <Row style={contentStyle}>
         {fakeProducts.map((content: any) => (
-          <Col span={4} style={{ margin: "1rem" }} key={content.title}>
+          <Col xl={4} lg={8} xs={22} style={{ margin: "1rem" }} key={content.title}>
             <CartCard
               title={content.title} description={content.description} image={content.image} price={content.price} id={content.id} />
           </Col>
