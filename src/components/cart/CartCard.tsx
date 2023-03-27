@@ -2,11 +2,14 @@ import { Card } from "antd";
 import React from "react";
 import { EditOutlined, ShoppingCartOutlined, StarFilled } from '@ant-design/icons';
 import Router from "next/router";
+import Image from "next/image";
 
 
 function ContentCard(props: any) {
   const { title, description, price, image, id } = props;
-
+  const myLoader = ({ src }: any) => {
+    return src
+  }
   const cardDClicked = (e: any) => {
     //router push to content page
     Router.push(`/shop/${id}`);
@@ -15,7 +18,7 @@ function ContentCard(props: any) {
     <Card
       bordered={false}
       style={styles.cardStyle}
-      cover={<img onClick={cardDClicked} alt="example" src={image} />}
+      cover={<Image loader={myLoader} onClick={cardDClicked} alt="example" src={image} width={500} height={350} />}
       actions={[
         <StarFilled key="setting" />,
         <ShoppingCartOutlined key="ellipsis" />
