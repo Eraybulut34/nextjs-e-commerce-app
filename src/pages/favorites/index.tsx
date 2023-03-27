@@ -17,11 +17,8 @@ function FavoritesPage() {
               ))}
             </List>
           </Card>
-
-
         </Col>
       </Row>
-
     </div>
   );
 }

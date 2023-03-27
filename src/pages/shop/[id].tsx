@@ -11,14 +11,13 @@ function ProductDetail(props: any) {
 
   return (
     <>
-      {/* product detail page */}
       <div style={styles.container}>
-        <Row style={{ width: "75%" }}>
-          <Col span={12}>
-            <img src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" width={300} height={300} alt="asdadsa" />
+        <Row style={{ width: "85%" }}>
+          <Col span={12} style={styles.colStyle}>
+            <img src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" width={1200} height={300} alt="asdadsa" />
           </Col>
           <Col span={12}>
-            <Card title="Card title" bordered={false} style={{ width: "100%" }}>
+            <Card title="Yatak" bordered={false} style={{ width: "100%" }}>
               <p>Card content</p>
               <p>Card content</p>
               <p>Card content</p>
@@ -39,6 +38,13 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "start",
+  },
+  colStyle: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    overflow: "hidden",
+    paddingInline: "8px",
   },
 };
 
