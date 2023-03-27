@@ -2,16 +2,19 @@ import { useRouter } from "next/router";
 import React from "react";
 import { Row, Col, Card } from "antd";
 import Image from "next/image";
+
 function ProductDetail(props: any) {
   const router = useRouter();
   const { id } = router.query;
-
+  const myLoader = ({ src }: any) => {
+    return src
+  }
   return (
     <>
       <div style={styles.container}>
         <Row style={{ width: "85%" }}>
           <Col span={12} style={styles.colStyle}>
-            <Image src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" width={1200} height={300} alt="asdadsa" />
+            <Image loader={myLoader} src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" width={1200} height={300} alt="asdadsa" />
           </Col>
           <Col span={12}>
             <Card title="Yatak" bordered={false} style={{ width: "100%" }}>
