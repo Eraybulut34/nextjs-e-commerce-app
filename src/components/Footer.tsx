@@ -1,12 +1,13 @@
 import { Col, Row } from "antd";
 import React from "react";
 import { fakeCategories } from "../../fakeCategories";
+import Router from "next/router";
 
 function Footer() {
   return (
     <Row style={styles.footerRowStyle}>
-      <Col span={4} style={styles.colStyle}>
-        Kolon 1
+      <Col span={4} style={styles.colStyle} onClick={() => Router.push("/favorites")}>
+        Favorilerim
       </Col>
       <Col span={4} style={styles.colStyle}>
         <span style={styles.colTitleStyle}>Kategoriler</span>

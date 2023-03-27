@@ -2,6 +2,7 @@ import React from "react";
 import { Col, Row, List } from "antd";
 import CartCard from "../cart/CartCard";
 import { fakeProducts } from "../../../fakeProducts";
+import { useDispatch } from "react-redux";
 
 const contentStyle: React.CSSProperties = {
   display: "flex",

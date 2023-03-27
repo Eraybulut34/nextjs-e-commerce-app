@@ -3,24 +3,31 @@ import React from "react";
 import { EditOutlined, ShoppingCartOutlined, StarFilled } from '@ant-design/icons';
 import Router from "next/router";
 import Image from "next/image";
+import { addFavorite } from "@/store";
+import { useDispatch } from "react-redux";
 
 
-function ContentCard(props: any) {
+
+function CartCard(props: any) {
+  const dispatch = useDispatch();
   const { title, description, price, image, id } = props;
   const myLoader = ({ src }: any) => {
     return src
   }
   const cardDClicked = (e: any) => {
-    //router push to content page
     Router.push(`/shop/${id}`);
   };
+  function handleAddFavorite() {
+    dispatch(addFavorite(props));
+  }
+
   return (
     <Card
       bordered={false}
       style={styles.cardStyle}
       cover={<Image loader={myLoader} onClick={cardDClicked} alt="example" src={image} width={500} height={350} />}
       actions={[
-        <StarFilled key="setting" />,
+        <StarFilled key="setting" onClick={handleAddFavorite} />,
         <ShoppingCartOutlined key="ellipsis" />
       ]}
 
@@ -54,4 +61,4 @@ const styles = {
   },
 };
 
-export default ContentCard;
+export default CartCard;
