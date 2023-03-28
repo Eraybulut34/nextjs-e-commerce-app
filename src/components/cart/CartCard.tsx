@@ -3,32 +3,41 @@ import React from "react";
 import { EditOutlined, ShoppingCartOutlined, StarFilled } from '@ant-design/icons';
 import Router from "next/router";
 import Image from "next/image";
-import { addFavorite } from "@/store";
-import { useDispatch } from "react-redux";
+import { addFavorite, removeFavorite } from "@/store";
+import { useDispatch, useSelector } from "react-redux";
 
 
 
 function CartCard(props: any) {
-  const dispatch = useDispatch();
   const { title, description, price, image, id } = props;
+  const dispatch = useDispatch();
+
+  let favorites = useSelector((state: any) => state.favorites);
+  const favoriteIds = favorites.map((favorite: any) => {
+    return favorite.product.id
+  })
   const myLoader = ({ src }: any) => {
     return src
   }
-  const cardDClicked = (e: any) => {
-    Router.push(`/shop/${id}`);
-  };
   function handleAddFavorite() {
     dispatch(addFavorite(props));
+  }
+  function removeFavoriteHandler() {
+    dispatch(removeFavorite(props));
   }
 
   return (
     <Card
       bordered={false}
       style={styles.cardStyle}
-      cover={<Image loader={myLoader} onClick={cardDClicked} alt="example" src={image} width={500} height={350} />}
+      cover={<Image loader={myLoader} onClick={() => { Router.push(`/shop/${id}`); }} alt="example" src={image} width={500} height={350} />}
       actions={[
-        <StarFilled key="setting" onClick={handleAddFavorite} />,
-        <ShoppingCartOutlined key="ellipsis" />
+        // <StarFilled key="setting" onClick={handleAddFavorite} />,
+        favoriteIds.includes(id) ? <StarFilled key="setting" onClick={removeFavoriteHandler}
+          style={{ color: "#1890ff" }}
+
+        /> : <StarFilled key="setting" onClick={handleAddFavorite} />,
+        < ShoppingCartOutlined key="ellipsis" />
       ]}
 
     >
