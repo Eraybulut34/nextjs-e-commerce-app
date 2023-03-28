@@ -26,7 +26,7 @@ function FavoritesPage() {
           <Card title="Favorilerim" bordered={false} style={{ width: "100%" }}>
             <List>
               {favorites.map((content: any) => (
-                <Row justify={"center"} align={"middle"}>
+                <Row justify={"center"} align={"middle"} key = {content.description}>
                   <Col span={4}>
                     <Image
                       loader={myLoader}
