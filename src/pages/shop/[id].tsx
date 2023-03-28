@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import React from "react";
-import { Row, Col, Card } from "antd";
+import { Row, Col, Card, Space, Button } from "antd";
 import Image from "next/image";
 
 function ProductDetail(props: any) {
@@ -17,11 +17,25 @@ function ProductDetail(props: any) {
             <Image loader={myLoader} src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" width={1200} height={300} alt="asdadsa" />
           </Col>
           <Col span={12}>
-            <Card title="Yatak" bordered={false} style={{ width: "100%" }}>
-              <p>Card content</p>
-              <p>Card content</p>
-              <p>Card content</p>
-            </Card>
+            <Row>
+              <Col span={24}>
+                <Card title="Yatak" bordered={false} style={{ width: "100%" }}>
+                  <p>Card content</p>
+                  <p>Card content</p>
+                  <p>Card content</p>
+                </Card>
+              </Col>
+
+            </Row>
+            <Row className="pa-4">
+              <Col span={12}></Col>
+              <Col span={6}>
+                <Button type="primary" style={{ width: "85%" }}>Sepete Ekle</Button>
+              </Col>
+              <Col span={6}>
+                <Button type="primary" style={{ width: "85%" }}>Favorilere Ekle</Button>
+              </Col>
+            </Row>
           </Col>
         </Row>
       </div>
