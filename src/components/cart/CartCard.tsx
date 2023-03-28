@@ -32,14 +32,11 @@ function CartCard(props: any) {
       style={styles.cardStyle}
       cover={<Image loader={myLoader} onClick={() => { Router.push(`/shop/${id}`); }} alt="example" src={image} width={500} height={350} />}
       actions={[
-        // <StarFilled key="setting" onClick={handleAddFavorite} />,
         favoriteIds.includes(id) ? <StarFilled key="setting" onClick={removeFavoriteHandler}
           style={{ color: "#1890ff" }}
-
         /> : <StarFilled key="setting" onClick={handleAddFavorite} />,
         < ShoppingCartOutlined key="ellipsis" />
       ]}
-
     >
       <p style={styles.cartTitleStyle}>{title}</p>
       <p style={styles.cartDescriptionStyle}>{description}</p>
