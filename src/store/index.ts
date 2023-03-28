@@ -3,6 +3,7 @@ import { combineReducers } from 'redux';
 
 const ADD_FAVORITE = 'ADD_FAVORITE';
 const REMOVE_FAVORITE = 'REMOVE_FAVORITE';
+const SET_FAVORITES = 'SET_FAVORITES';
 
 export function addFavorite(product:any) {
   localStorage.setItem('favorites', JSON.stringify([...JSON.parse(localStorage.getItem('favorites') || '[]'), product]));
@@ -14,6 +15,10 @@ export function removeFavorite(product:any) {
   return { type: REMOVE_FAVORITE, product }
 }
 
+export function setFavorites(favorites:any) {
+  return { type: SET_FAVORITES, favorites }
+}
+
 function favorites(state = [], action:any) {
   switch (action.type) {
     case ADD_FAVORITE:
@@ -21,6 +26,8 @@ function favorites(state = [], action:any) {
     case REMOVE_FAVORITE:
       console.log(action,state);
       return state.filter((favorite:any) => favorite.product.id != action.product.id);
+    case SET_FAVORITES:
+      return action
     default:
       return state;
   }
