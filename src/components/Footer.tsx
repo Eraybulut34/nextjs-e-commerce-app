@@ -7,7 +7,7 @@ import Router from "next/router";
 function Footer() {
   return (
     <Row style={styles.footerRowStyle}>
-      <Col span={4} style={styles.colStyle} onClick={() => Router.push("/favorites")}>
+      <Col xl={4} xs={22}  style={styles.colStyle} onClick={() => Router.push("/favorites")}>
         <span style={styles.colTitleStyle}>Harita</span>
         {fakePages.map((content: any) => (
           <span key={content.title} style={styles.colItemStyle}
@@ -15,18 +15,27 @@ function Footer() {
           >{content.title}</span>
         ))}
       </Col>
-      <Col span={4} style={styles.colStyle}>
+      <Col xl={4} xs={22}  style={styles.colStyle}>
         <span style={styles.colTitleStyle}>Kategoriler</span>
         {fakeCategories.map((content: any) => (
           <span key={content.title} style={styles.colItemStyle}>{content.title}</span>
         ))}
       </Col>
-      <Col span={4} style={styles.colStyle}>
+      <Col xl={4} xs={22}  style={styles.colStyle}>
         <span style={styles.colTitleStyle}>
+          Kolon 3
         </span>
+        {fakeCategories.map((content: any) => (
+          <span key={content.title} style={styles.colItemStyle}>{content.title}</span>
+        ))}
       </Col>
-      <Col span={4} style={styles.colStyle}>
-        Kolon 4
+      <Col xl={4} xs={22}  style={styles.colStyle}>
+        <span style={styles.colTitleStyle}>
+          Kolon 4
+        </span>
+        {fakeCategories.map((content: any) => (
+          <span key={content.title} style={styles.colItemStyle}>{content.title}</span>
+        ))}
       </Col>
     </Row>
   );
