@@ -1,13 +1,19 @@
 import { Col, Row } from "antd";
 import React from "react";
 import { fakeCategories } from "../../fakeCategories";
+import { fakePages } from "../../fakePages";
 import Router from "next/router";
 
 function Footer() {
   return (
     <Row style={styles.footerRowStyle}>
       <Col span={4} style={styles.colStyle} onClick={() => Router.push("/favorites")}>
-        Favorilerim
+        <span style={styles.colTitleStyle}>Harita</span>
+        {fakePages.map((content: any) => (
+          <span key={content.title} style={styles.colItemStyle}
+          onClick={() => Router.push(content.href)}
+          >{content.title}</span>
+        ))}
       </Col>
       <Col span={4} style={styles.colStyle}>
         <span style={styles.colTitleStyle}>Kategoriler</span>
@@ -39,7 +45,7 @@ const styles = {
   colStyle: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "space-around",
+    justifyContent: "flex-start",
     alignItems: "center",
   } as React.CSSProperties,
   colTitleStyle: {
@@ -48,7 +54,8 @@ const styles = {
     marginBlock: "1rem"
   } as React.CSSProperties,
   colItemStyle: {
-    margin: "3px"
+    margin: "3px",
+    cursor: "pointer"
   }
 };
 

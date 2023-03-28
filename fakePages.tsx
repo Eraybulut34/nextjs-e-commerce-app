@@ -5,9 +5,19 @@ export const fakePages = [
         href: "/"
     },
     {
+        id: 6,
+        title: "Hakkımızda",
+        href: "about"
+    },
+    {
         id: 2,
-        title: "Mağaza",
+        title: "Alışveriş",
         href: "/shop"
+    },
+    {
+        id: 5,
+        title: "Mağazalar",
+        href: "stores"
     },
     {
         id: 3,
@@ -17,6 +27,6 @@ export const fakePages = [
     {
         id: 4,
         title: "Profilim",
-        href: "Profile"
+        href: "profile"
     }
 ]
