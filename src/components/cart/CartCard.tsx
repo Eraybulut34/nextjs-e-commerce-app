@@ -30,7 +30,7 @@ function CartCard(props: any) {
     <Card
       bordered={false}
       style={styles.cardStyle}
-      cover={<Image loader={myLoader} onClick={() => { Router.push(`/shop/${id}`); }} alt="example" src={image} width={500} height={350} />}
+      cover={<Image loader={myLoader} onClick={() => { Router.push(`/shop/${id}`); }} alt="example" src={image} width={500} height={350} style={{cursor: "pointer"}} />}
       actions={[
         favoriteIds.includes(id) ? <StarFilled key="setting" onClick={removeFavoriteHandler}
           style={{ color: "#1890ff" }}
@@ -38,7 +38,9 @@ function CartCard(props: any) {
         < ShoppingCartOutlined key="ellipsis" />
       ]}
     >
-      <p style={styles.cartTitleStyle}>{title}</p>
+      <p style={styles.cartTitleStyle}
+      onClick={() => { Router.push(`/shop/${id}`); }}
+      >{title}</p>
       <p style={styles.cartDescriptionStyle}>{description}</p>
       <p style={styles.cartPriceStyle}>{price} $</p>
 
@@ -52,6 +54,7 @@ const styles = {
     margin: "8px",
     borderRadius: "8px",
     boxShadow: "0 1px 2px 0 rgba(0,0,0,0.2), 0 3px 5px 0 rgba(0,0,0,0.19)",
+    cursor: "pointer"
   },
   cartTitleStyle: {
     fontWeight: "bold",
