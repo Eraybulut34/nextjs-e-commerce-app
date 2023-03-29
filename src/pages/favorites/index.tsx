@@ -36,7 +36,7 @@ function FavoritesPage() {
                       height={100}
                     />
                   </Col>
-                  <Col span={17}>
+                  <Col xl={17} lg={16} md={14} sm={12} xs={24}>
                     <Row>
                       <Col span={24}>
                         <h3>{content.title}</h3>
@@ -45,11 +45,11 @@ function FavoritesPage() {
                         <p>{content.description}</p>
                       </Col>
                       <Col span={24}>
-                        <p>{content.price}</p>
+                        <p style={styles.priceStyle}>{content.price} $</p>
                       </Col>
                     </Row>
                   </Col>
-                  <Col span={3}>
+                  <Col lg={3} md={4} sm={6} xs={24}>
                     <Row align={"middle"} className="pa-4">
                       <Col span={24}>
                         <Button type="primary" style={{width:"100%"}}>Sepete Ekle</Button>
@@ -77,6 +77,11 @@ const styles = {
     justifyContent: "center",
     alignItems: "start",
     height: "100vh",
+  },
+  priceStyle: {
+    fontWeight: "bold",
+    fontSize: "1.2rem",
+    color: "#1890ff",
   },
 };
 
